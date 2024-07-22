@@ -11,9 +11,6 @@ data "aws_ami" "amazon-linux" {
     values = ["hvm"]
   }
 }
-provider "aws" {
-    region="us-east-2"
-}
 resource "aws_instance" "dev_machine" {
   ami = data.aws_ami.amazon-linux.id
   instance_type = "t2.micro"
